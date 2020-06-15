@@ -1,0 +1,106 @@
+.message-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  z-index: 999;
+  opacity: 1;
+  visibility: hidden;
+
+  .message {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+  }
+
+  &.open {
+    background-color: rgba(0, 0, 0, .7);
+    visibility: visible;
+  }
+}
+
+.message-info {
+  position: relative;
+  z-index: 22;
+  max-width: 400px;
+  padding: 4rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column
+}
+
+.message-info__button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 42px;
+  line-height: 22px;
+  color: rgba(59, 168, 252, .7);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  opacity: .5;
+  transition: opacity .3s
+}
+
+.message-info__button-close:hover {
+  background: transparent;
+  opacity: 1
+}
+
+.info-header {
+  margin-bottom: 15px;
+  text-align: center;
+  color: black;
+}
+
+.info-paragraph,
+.info-text {
+  margin-top: 10px;
+  color: black;
+}
+
+.modal-fade-enter-active {
+  -webkit-animation: show-in 1s;
+  animation: show-in 1s
+}
+
+.modal-fade-leave-active {
+  animation: show-in .4s reverse
+}
+
+@media (hover:hover) {
+  .message-info__button-close:hover {
+    background: transparent;
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes show-in {
+  0% {
+    transform: translateY(-100%)
+  }
+
+  to {
+    transform: translateY(0)
+  }
+}
+
+@keyframes show-in {
+  0% {
+    transform: translateY(-100%)
+  }
+
+  to {
+    transform: translateY(0)
+  }
+}
